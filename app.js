@@ -2,10 +2,11 @@
 import { renderMushroom, renderFriend } from './render-utils.js';
 import { addFriend, findFriendByName } from './data-utils.js';
 
+const friendsInputEl = document.querySelector('.add-friend');
 const friendsEl = document.querySelector('.friends');
 const mushroomsEl = document.querySelectorAll('.mushrooms');
 const addMushroomButton = document.getElementById('add-mushroom');
-const addFriendButton = document.getElementById('add-friend');
+const addFriendButton = document.getElementById('add-friend-button');
 // initialize state
 
 let mushroomCount = 3;
@@ -63,11 +64,11 @@ function displayMushrooms() {
 
 
 addFriendButton.addEventListener('click', () => {
-    const name = friendInputEl;
+    const name = friendsInputEl;
 
     addFriend(name, friendData);
 
-    friendInputEl.value = '';
+    friendsInputEl.value = '';
 
     displayFriends(friendData);
 });
